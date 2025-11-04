@@ -33,6 +33,11 @@ header h1{
   z-index: 1001;
 }
 
+.hamburger.open{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
 .hamburger span {
   display: block;
   height: 3px;
@@ -43,14 +48,16 @@ header h1{
 }
 
 .hamburger.open span:nth-child(1) {
-   transform:  rotate(49deg) translate(11px, 6px);}
+   transform:  rotate(49deg) translate(11px, 6px);
+}
 
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-51deg) translate(8px, -4px);}
+    transform: rotate(-51deg) translate(8px, -4px);
+}
 
 
 
@@ -466,7 +473,7 @@ main .text p{
   nav {
     position: fixed;
     top: 0;
-    right: -260px; /* مخفي خارج الشاشة */
+    right: -260px; 
     width: 260px;
     height: 100%;
     background-color: #fff;
@@ -487,7 +494,7 @@ main .text p{
     gap: 1.5rem;
   }
   .projects-grid {
-    grid-template-columns: 1fr; /* عرض بطاقة واحدة لكل صف */
+    grid-template-columns: 1fr;
   }
 }
 
