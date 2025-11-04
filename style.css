@@ -1,0 +1,367 @@
+:root{
+    --textColor : black;
+    --SpanColor: #ea1528;
+    --lineHeight : 3rem;
+    --TitleSize : clamp(2rem,5vw,3rem);
+    --paragraphSize:clamp(1rem, 1.4vw, 1.5rem);
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+header h1{
+    cursor: pointer;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+   transform:  rotate(49deg) translate(11px, 6px);}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-51deg) translate(8px, -4px);}
+
+
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+
+
+
+
+header nav ul li{
+    margin-right: 1rem;
+}
+header nav ul li a{
+    color: var(--textColor);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+header nav ul li a::before{
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    border-radius: 3rem;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover:before{
+    width: 100%;
+}
+
+
+span{
+    color: var(--SpanColor);
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+}
+main .image{
+    height: auto;
+    width: 50%;
+}
+main .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+}
+main .text h1{
+    font-size: var(--TitleSize);
+}
+main .text h1,h2{
+    line-height: var(--lineHeight);
+}
+main .text p{
+    font-size: var(--paragraphSize);
+    line-height: 1.3rem;
+}
+.socialMedia a{
+    line-height: 4rem;
+    padding: 2rem 0.4rem;
+    margin-right: 0.4rem;
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+#overlay.active {
+  display: block;
+}
+
+
+/* About Section */
+.About {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.About h1 {
+  width: 100%;
+  text-align: center;
+  font-size: var(--TitleSize);
+  margin-bottom: 3rem;
+}
+
+.about-content {
+  flex: 1 1 45%;
+  max-width: 500px;
+  text-align: left;
+}
+.about-content p{
+    font-size: var(--paragraphSize);
+}
+.skills {
+  flex: 1 1 45%;
+  max-width: 500px;
+}
+
+.skills h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skill {
+  margin-bottom: 1.2rem;
+}
+
+.skill p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bar {
+  background-color: #eee;
+  border-radius: 2rem;
+  overflow: hidden;
+  height: 0.8rem;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--SpanColor);
+  border-radius: 2rem;
+}
+
+/* Contact Section */
+.Contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.Contact h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 2rem;
+}
+
+.ContactMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--SpanColor);
+}
+
+.contact-form textarea {
+  width: 100%;
+  height: 9rem;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: var(--SpanColor);
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #c11020;
+}
+.contact-text {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  font-size: var(--paragraphSize);
+  line-height: 1.6;
+  color: #333;
+}
+
+@media screen and (max-width:400px){
+    main {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+    main .image{
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+    main .text{
+        width: 90%;
+        text-align: center;
+    }
+    .About{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-content,
+    .skills{
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:401px) and (max-width:900px){
+    main{
+        flex-direction: column;
+        height: auto;
+        padding: 2rem;
+    }
+    main .image, main .text{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .About{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-content, .skills{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+@media screen and (max-width: 900px) {
+
+  .hamburger {
+    display: flex;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    right: -260px; /* مخفي خارج الشاشة */
+    width: 260px;
+    height: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+
+@media screen and (min-width:1200px){
+    main{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .About{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
