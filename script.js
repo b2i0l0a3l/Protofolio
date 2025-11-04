@@ -14,7 +14,6 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 
-// اذهب لتسجيل حساب في https://www.emailjs.com/
 emailjs.init("ei6JrJjIPhh4WWyQm");
 
 document.getElementById('contact-form').addEventListener('submit', function(event){
@@ -27,3 +26,4 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             alert('Oops... ' + JSON.stringify(error));
         });
 });
+

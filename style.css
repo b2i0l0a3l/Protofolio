@@ -200,6 +200,140 @@ main .text p{
   background-color: var(--SpanColor);
   border-radius: 2rem;
 }
+/* Project Section */
+.Projects {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.Projects h1 {
+  font-size: var(--TitleSize);
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.4rem .6rem rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.project-card p {
+  padding: 0 1rem 1rem;
+  font-size: var(--paragraphSize);
+  color: #555;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: var(--SpanColor);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #c11020;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow:0 0.4rem .6rem rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay h3 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.overlay p {
+  font-size: var(--paragraphSize);
+  margin-bottom: 1rem;
+}
+
+.overlay .project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.overlay .project-links a {
+  background-color: var(--SpanColor);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.overlay .project-links a:hover {
+  background-color: #c11020;
+}
+
 
 /* Contact Section */
 .Contact{
@@ -351,6 +485,9 @@ main .text p{
   nav ul {
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr; /* عرض بطاقة واحدة لكل صف */
   }
 }
 
